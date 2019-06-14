@@ -1,3 +1,5 @@
+Dataset: Dataset was officialy given by the organizers of the competition and is quite huge to upload on github.
+Aim: Was to predict how good a soldier will perform on the battle field .
 Approach:
 Initially, the basic and most important step was to understand the data and know the input and output. This made clear that it is a problem of regression between the range 0 and 1.
 1.	Pre-processing step
