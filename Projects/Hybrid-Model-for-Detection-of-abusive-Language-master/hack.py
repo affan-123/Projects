@@ -34,13 +34,6 @@ from sklearn.feature_extraction.text import CountVectorizer
 vect_cv = CountVectorizer(min_df=5, ngram_range=(1,2)).fit(xtrain)
 X_train_vectorized=vect_cv.transform(xtrain)
 
-# from sklearn.linear_model import LinearRegression
-# lr=LinearRegression()
-# lr.fit(X_train_vectorized,y_train)
-# ypred=lr.predict(vect.transform(X_test))
-# print(len(ypred))
-# print(len(y_test))
-#
 
 
 from sklearn.linear_model import LogisticRegression
@@ -103,11 +96,6 @@ else:
     print("Output: It is not an abusive sentence")
     mainarray.append(0)
 
-#
-#
-#
-# #
-# #
 
 X=df['tweet']
 from  sklearn.model_selection import train_test_split
