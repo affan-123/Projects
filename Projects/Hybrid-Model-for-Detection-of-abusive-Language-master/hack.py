@@ -45,7 +45,7 @@ from sklearn.metrics import roc_auc_score
 print ("Logistics Regression:",roc_auc_score(y_test,predictionsLR))
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.model_selection import cross_val_score
-RF=RandomForestClassifier(n_estimators=100)
+RF=RandomForestClassifier(n_estimators=150)
 RF.fit(X_train_vectorized,y_train)
 predictionsRF=RF.predict(vect_cv.transform(X_test))
 print ("Random Forest:",roc_auc_score(y_test,predictionsRF))
@@ -78,7 +78,7 @@ print('Logistic Regression: ', roc_auc_score(y_test, predictions))
 
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.model_selection import cross_val_score
-RF=RandomForestClassifier(n_estimators=100)
+RF=RandomForestClassifier(n_estimators=150)
 RF.fit(X_train_vectorized,y_train)
 predictionsRF=RF.predict(vect_tf.transform(X_test))
 print ("RandomForest:",roc_auc_score(y_test,predictionsRF))
@@ -137,7 +137,7 @@ model.add(Dense(1,activation='sigmoid'))
 
 
 model.compile(loss='binary_crossentropy',optimizer='adam',metrics=['accuracy'])
-batch_size = 64
+batch_size = 128
 
 model.fit(X_TRAIN,ytrain, batch_size=batch_size, epochs=30)
 model.save('abusive.h5')
