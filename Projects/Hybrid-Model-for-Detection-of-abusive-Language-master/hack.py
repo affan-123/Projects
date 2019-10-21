@@ -31,7 +31,7 @@ Ycon=df['confidence']
 xtrain,X_test,y_train,y_test=train_test_split(X,Y,test_size=0.4)
 print("Using CountVectorizer :")
 from sklearn.feature_extraction.text import CountVectorizer
-vect_cv = CountVectorizer(min_df=5, ngram_range=(1,2)).fit(xtrain)
+vect_cv = CountVectorizer(min_df=5, ngram_range=(1,3)).fit(xtrain)
 X_train_vectorized=vect_cv.transform(xtrain)
 
 
@@ -139,8 +139,8 @@ model.add(Dense(1,activation='sigmoid'))
 model.compile(loss='binary_crossentropy',optimizer='adam',metrics=['accuracy'])
 batch_size = 128
 
-model.fit(X_TRAIN,ytrain, batch_size=batch_size, epochs=30)
-model.save('abusive.h5')
+model.fit(X_TRAIN,ytrain, batch_size=batch_size, epochs=100)
+model.save('abusive_v3.h5')
 X_TEST=[]
 for i in xtest:
     sentence=[]
