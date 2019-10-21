@@ -129,20 +129,16 @@ model=Sequential()
 from keras.layers.embeddings import  Embedding
 from keras.layers import LSTM
 
-#model.add(Embedding(len(top_words),embed_vector_lenght,input_length=max_words))
-#learning_rate=0.01
+
 
 model.add(Dense(30,input_shape=(30,100)))
 model.add(LSTM(30))
 model.add(Dense(1,activation='sigmoid'))
-#model.add(Dense(1,activation='Softmax'))
-#print(model.summary())
+
 
 model.compile(loss='binary_crossentropy',optimizer='adam',metrics=['accuracy'])
 batch_size = 64
-# # num_epochs = 3
-# # X_valid, y_valid = X_train[:batch_size], ytrain[:batch_size]
-# # X_train2, y_train2 = X_train[batch_size:], ytrain[batch_size:]
+
 model.fit(X_TRAIN,ytrain, batch_size=batch_size, epochs=30)
 model.save('abusive.h5')
 X_TEST=[]
